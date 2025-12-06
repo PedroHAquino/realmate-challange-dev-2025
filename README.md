@@ -18,7 +18,7 @@ Desenvolver uma web API utilizando **Django Rest Framework** para receber webhoo
 2.	A API deve:
 	- Receber eventos via POST no endpoint `localhost:80/webhook/`
 	- Criar instâncias dos modelos correspondentes
-3.	Criar um endpoint GET em `localhost:80/conversations/{id}/` para expor a conversa, incluindo:
+3.	Criar um endpoint GET em `localhost:80/conversation/{id}/` para expor a conversa, incluindo:
 	- Seu estado (`OPEN` ou `CLOSED`)
 	- Suas mensagens
 4.	Lidar com erros de maneira graceful (evitar retornos de erro 500).
