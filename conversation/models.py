@@ -4,8 +4,9 @@ from .enums import ConversationState, MessageDirection
 
 
 class Conversation(models.Model):
-    id = models.AutoField(primary_key=True)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     state = models.CharField(max_length=10, choices=ConversationState.choices, default=ConversationState.OPEN)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def close(self):
         self.state = ConversationState.CLOSED
@@ -13,7 +14,11 @@ class Conversation(models.Model):
 
 
 class Message(models.Model):
-    id = models.AutoField(primary_key=True)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    conversation = models.ForeignKey(Conversation, related_name="messages", on_delete=models.CASCADE)
+    direction = models.CharField(max_length=10, choices=MessageDirection.choices)
+    content = models.TextField()
+    timestamp = models.DateTimeField()
 
     class Meta:
         ordering = ["timestamp"]
