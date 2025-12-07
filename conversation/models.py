@@ -13,7 +13,7 @@ class Conversation(models.Model):
         self.save()
 
     class Meta:
-        db_table = "Conversation"
+        db_table = "conversation"
 
 
 class Message(models.Model):
@@ -24,5 +24,5 @@ class Message(models.Model):
     timestamp = models.DateTimeField()
 
     class Meta:
-        db_table = "Message"
+        db_table = "message"
         ordering = ["timestamp"]
