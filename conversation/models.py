@@ -12,6 +12,9 @@ class Conversation(models.Model):
         self.state = ConversationState.CLOSED
         self.save()
 
+    class Meta:
+        db_table = "Conversation"
+
 
 class Message(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -21,4 +24,5 @@ class Message(models.Model):
     timestamp = models.DateTimeField()
 
     class Meta:
+        db_table = "Message"
         ordering = ["timestamp"]
