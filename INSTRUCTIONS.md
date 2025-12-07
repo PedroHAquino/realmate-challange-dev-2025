@@ -182,8 +182,8 @@ Este projeto atende todos os requisitos obrigatórios do desafio:
 - Django + Django REST Framework
 - PostgreSQL
 - Docker + Docker Compose
-- Poetry (sem pip/venv)
+- Poetry
 - Webhook funcional
 - Regras de negócio implementadas
 - Endpoint GET de conversas
-- INSTRUCTIONS.md (este arquivo)
+- INSTRUCTIONS.md
