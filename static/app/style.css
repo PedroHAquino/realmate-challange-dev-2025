@@ -1,0 +1,16 @@
+.message {
+    max-width: 75%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.RECEIVED {
+    background-color: #e3f2fd;
+    margin-right: auto;
+}
+
+.SENT {
+    background-color: #e8e8e8;
+    margin-left: auto;
+}
